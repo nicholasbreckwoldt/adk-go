@@ -156,6 +156,8 @@ func convertSnake(path, indent string, o any) (any, error) {
 		return v.Float(), nil
 	case reflect.Int, reflect.Int8, reflect.Int16, reflect.Int32, reflect.Int64:
 		return v.Int(), nil
+	case reflect.Uint, reflect.Uint8, reflect.Uint16, reflect.Uint32, reflect.Uint64:
+		return v.Uint(), nil
 
 	default:
 		return nil, fmt.Errorf("unsupported type: %v", v.Kind())
